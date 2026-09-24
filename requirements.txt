@@ -1,0 +1,10 @@
+requests
+nltk
+pytest
+
+git clone https://github.com/oskarskjellum/Project-Gutenberg---Webscraper.git
+cd Project-Gutenberg---Webscraper
+python -m venv venv
+venv\Scripts\activate        # eller source venv/bin/activate på Mac
+pip install -r requirements.txt
+python src/scraper.py
