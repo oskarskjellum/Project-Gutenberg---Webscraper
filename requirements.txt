@@ -5,6 +5,13 @@ pytest
 git clone https://github.com/oskarskjellum/Project-Gutenberg---Webscraper.git
 cd Project-Gutenberg---Webscraper
 python -m venv venv
-venv\Scripts\activate        # eller source venv/bin/activate på Mac
+venv\Scripts\activate        # eller source venv/bin/activate på Mac/Linux
 pip install -r requirements.txt
+# om pip install -r requirements.txt ikke fungerer, prøv pip installer bibliotekene en etter en
+pip install requests
+pip install nltk
+pip install pytest # etter du har installert pytest, kan du kjøre testene for å sjekke at alt fungerer som det skal/installert :pip show pytest
+pip show requests
+pip show nltk
+pip show pytest
 python src/scraper.py
