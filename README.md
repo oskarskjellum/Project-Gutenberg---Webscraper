@@ -23,11 +23,10 @@ python -m venv venv
 
 Aktiver miljøet på Windows:
 
-venv\Scripts\activate
+# venv\Scripts\activate
 
-På Mac/Linux:
+På Mac/Linux: # source venv/bin/activate
 
-source venv/bin/activate
 
 Når venv er aktivert, skal du vanligvis se (venv) i starten av terminalen.
 
@@ -35,7 +34,7 @@ Installere pakkene
 
 Installer alle nødvendige Python-biblioteker med:
 
-pip install -r requirements.txt
+# pip install -r requirements.txt
 
 requirements.txt inneholder:
 
@@ -45,12 +44,12 @@ pytest
 
 Hvis pip install -r requirements.txt ikke fungerer, kan pakkene installeres én etter én:
 
-pip install requests
-pip install nltk
-pip install pytest
+# pip install requests
+# pip install nltk
+# pip install pytest
 
 Du kan sjekke om pakkene er installert med:
 
-pip show requests
-pip show nltk
-pip show pytest
+# pip show requests
+# pip show nltk
+# pip show pytest
