@@ -27,6 +27,7 @@ def fetch_book(book_id: int, save_dir: Path = DATA_DIR, timeout: int = 10) -> st
         raise BookFetchError(f"Klarte ikke hente bok {book_id} fra {url}") from exc
     
     save_dir.mkdir(parents=True, exist_ok=True)
+<<<<<<< HEAD
     save_path = save_dir / f"{book_id}.txt"
     save_path.write_text(response.text, encoding="utf-8")
 
@@ -51,3 +52,22 @@ if __name__ == "__main__":
              
 
 
+=======
+    (save_dir / f"{book_id}.txt").write_text(text, encoding="utf-8")
+    logger.info("Saved book %s to %s", book_id, save_dir / f"{book_id}.txt")
+    return text
+
+def fetch_book(book_ids:list[int], save_dir: Path = DATA_DIR) -> dict [int, str] 
+     results = {}
+     for book_id in book_ids:
+         try:
+             results[book_id] = fetch_book(book_id, save_dir)
+         except BookFetchError as exc:
+             logger.warning(str(exc))
+      return results
+
+
+if __name__ == "__main__":
+    fetch_book([DEFAULT_BOOK_ID])
+    
+>>>>>>> 3b71015017e069ca11f02543d80e1d02adbcee49
