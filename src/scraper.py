@@ -11,6 +11,7 @@ GUTENBERG_URL_TEMPLATE = "https://www.gutenberg.org/ebooks/{id}.txt.utf-8"
 DATA_DIR = Path("data/raw")
 
 
+
 class BookFetchError(Exception):
     pass
 
