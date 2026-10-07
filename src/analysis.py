@@ -56,7 +56,7 @@ def print_summary(result: AnalysisResult, preview: int = 10) -> None:
 
 
 if __name__ == "__main__":
-    text = load_text(Path("data/raw/2701.txt"))
+    text = load_text(Path("data/raw/79690.txt"))
     result = analyze_text(text, top_n=3)
     print_summary(result)
    

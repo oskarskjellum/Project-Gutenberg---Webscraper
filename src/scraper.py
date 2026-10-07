@@ -11,12 +11,11 @@ GUTENBERG_URL_TEMPLATE = "https://www.gutenberg.org/ebooks/{id}.txt.utf-8"
 DATA_DIR = Path("data/raw")
 
 
-
 class BookFetchError(Exception):
     pass
 
 def build_url(book_id: int) -> str:
-    return GUTENBERG_URL_TEMPLATE.format(book_id=book_id)
+    return GUTENBERG_URL_TEMPLATE.format(id=book_id)
 
 def fetch_book(book_id: int, save_dir: Path = DATA_DIR, timeout: int = 10) -> str:
     url = build_url(book_id)
