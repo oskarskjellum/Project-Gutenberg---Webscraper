@@ -4,6 +4,9 @@ from dataclasses import dataclass
 from pathlib import Path
 
 WORD_PATTERN = re.compile(r"\b[a-zA-Z']+\b")
+START_PATTERN = re.compile(r"\*\*\* ?START OF (?:THE|THIS) PROJECT GUTENBERG EBOOK.*?\*\*\*")
+END_PATTERN = re.compile(r"\*\*\* ?END OF (?:THE|THIS) PROJECT GUTENBERG EBOOK.*?\*\*\*")
+NOTES_PATTERN = re.compile(r"\[Notes on the Text:.*?\]", re.DOTALL)
 
 
 @dataclass
@@ -36,8 +39,24 @@ def analyze_text(text: str, top_n: int = 3) -> AnalysisResult:
     )
 
 
+def split_gutenberg_text(text: str) -> tuple[str, str, str]:
+    start_match = START_PATTERN.search(text)
+    end_match = END_PATTERN.search(text)
+
+    if not start_match or not end_match:
+        raise ValueError("Text does not contain valid Gutenberg headers and footers")
+
+    header = text[:start_match.start()]
+    body = text[start_match.end():end_match.start()]
+    footer = text[end_match.end():]
+
+    return header, body, footer
+
+
 def load_text(path: Path) -> str:
-    return path.read_text(encoding="utf-8")
+    raw_text = path.read_text(encoding="utf-8")
+    header, body, footer = split_gutenberg_text(raw_text)
+    return body
 
 
 def print_summary(result: AnalysisResult, preview: int = 10) -> None:
