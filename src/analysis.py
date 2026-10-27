@@ -48,6 +48,7 @@ def split_gutenberg_text(text: str) -> tuple[str, str, str]:
 
     header = text[:start_match.start()]
     body = text[start_match.end():end_match.start()]
+    body = NOTES_PATTERN.sub("", body)
     footer = text[end_match.end():]
 
     return header, body, footer
