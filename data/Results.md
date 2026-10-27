@@ -32,32 +32,37 @@ Book: *Romanced to Freedom* by Murray Leinster (Gutenberg ID 79690)
 
 NEW Resolts 
 
-Results – Word Analysis
+# Results – Word Analysis
 
-Book: Romanced to Freedom by Murray Leinster (Gutenberg ID 79690)
+Book: *Romanced to Freedom* by Murray Leinster (Gutenberg ID 79690)
 
-The Gutenberg header, license text and footer are removed before counting, so only the book itself is analysed.
+The Gutenberg header, license text and footer are removed before counting,
+so only the book itself is analysed.
 
-Numbers
-Total word count: 3505
-Unique words: 979
-Words used only once: 599
-Top 3 words
-the – 208
-and – 115
-a – 113
-Top 10
-Word	Count
-the	208
-and	115
-a	113
-to	77
-of	76
-his	69
-i	68
-was	66
-he	66
-you	64
+## Numbers
 
+- Total word count: 3505
+- Unique words: 979
+- Words used only once: 599
 
+## Top 3 words
+
+1. the – 208
+2. and – 115
+3. a – 113
+
+## Top 10
+
+| Word | Count |
+|------|-------|
+| the | 208 |
+| and | 115 |
+| a | 113 |
+| to | 77 |
+| of | 76 |
+| his | 69 |
+| i | 68 |
+| was | 66 |
+| he | 66 |
+| you | 64 |
 
